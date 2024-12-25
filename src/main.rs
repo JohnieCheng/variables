@@ -1,3 +1,5 @@
+use std::ptr::null;
+
 fn main() {
     // let mut x = 5;
     // println!("x is {}", x);
@@ -124,26 +126,55 @@ fn main() {
     //
     //     println!("LIFTOFF!!!");
     // }
+    // {
+    //     let a = [10, 20, 30, 40, 50];
+    //     let mut index = 0;
+    //
+    //     while index < 5 {
+    //         println!("the value is: {}", a[index]);
+    //
+    //         index += 1;
+    //     }
+    //
+    //     let a = [10, 20, 30, 40, 50];
+    //
+    //     for element in a {
+    //         println!("the value is: {element}");
+    //     }
+    //
+    //     for number in (1..4).rev() {
+    //         println!("{number}!");
+    //     }
+    //     println!("LIFTOFF!!!");
+    // }
+
+    // {
+    //     let mut user1 = User {
+    //         name: String::from("username"),
+    //         age: 13,
+    //         email: String::from("example@example.com"),
+    //         active: true,
+    //     };
+    //     let user2 = User {
+    //         active: user1.active,
+    //         name: user1.name,
+    //         email: String::from("another@example.com"),
+    //         age: user1.age,
+    //     };
+    //
+    //     let user3 = User {
+    //         email: String::from("anotherone@example.com"),
+    //         ..user2
+    //     };
+    // }
+
+    // {
+    //     let black = Color(0, 0, 0);
+    //     let origin = Point(0, 0, 0);
+    // }
+
     {
-        let a = [10, 20, 30, 40, 50];
-        let mut index = 0;
-
-        while index < 5 {
-            println!("the value is: {}", a[index]);
-
-            index += 1;
-        }
-
-        let a = [10, 20, 30, 40, 50];
-
-        for element in a {
-            println!("the value is: {element}");
-        }
-
-        for number in (1..4).rev() {
-            println!("{number}!");
-        }
-        println!("LIFTOFF!!!");
+        let subject = AlwaysEqual;
     }
 }
 
@@ -154,3 +185,25 @@ fn another_function() {
 fn five() -> i32 {
     5
 }
+
+struct User {
+    name: String,
+    age: u8,
+    active: bool,
+    email: String,
+}
+
+fn build_user(name: String, age: u8, active: bool) -> User {
+    User {
+        name,
+        age,
+        active,
+        email,
+    }
+}
+
+// 元组结构
+struct Color(i32, i32, i32);
+struct Point(i32, i32, i32);
+// 单元结构
+struct AlwaysEqual;
